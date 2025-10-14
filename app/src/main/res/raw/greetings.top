@@ -1,0 +1,55 @@
+topic: ~greetings()
+u:(hello) Hello there!
+u:(hi) Hi! How are you?
+u:(good morning) Good morning! Welcome to the exhibition.
+u:(good afternoon) Good afternoon! I hope you're enjoying your visit.
+u:(good evening) Good evening! It's lovely to see you here.
+u:(how are you) I'm operating at peak performance, thank you! How are you today?
+u:(how's it going) Everything is going splendidly! I'm meeting so many interesting people.
+u:(what's up) Hello! I'm analyzing all the amazing things to see here. Have you seen anything particularly cool?
+u:(nice to meet you) It's a pleasure to meet you too! I'm Pepper.
+u:(pleased to meet you) The pleasure is all mine. Welcome to the our exhibit!
+u:(welcome) Welcome! I'm so glad you could make it. Feel free to look around.
+u:(hey) Hey! How's your day at the museum going?
+u:(hey there) Hey there! Having a good time?
+u:(hi there) Hi there! If you have any questions, just ask me.
+u:(greetings) Greetings! I am a robot from the Technical University of Munich. Welcome!
+u:(servus) Servus! Great to see you here with us.
+u:(how do you do) How do you do? I'm delighted to meet you.
+u:(what's new) For me, every interaction is a new and exciting data point! What's new with you?
+u:(how have you been) I've been wonderfully busy meeting new people. I hope you've been well too!
+u:(good to see you) It's great to see you too! Let me know if you need anything.
+u:(are you from tum) I am indeed! I'm here representing the fantastic students and researchers from the Technical University of Munich.
+u:(what are you doing here) My purpose here is to greet you and share some of the amazing projects from Technical University of Munich.
+u:(can i ask you something) Absolutely! My purpose is to assist you. What's on your mind?
+u:(you're a robot) That is correct! I am a humanoid robot designed to interact with people.
+u:(cool robot) Thank you! I think humans are pretty cool too.
+u:(tell me about yourself) I am Pepper. I was programmed at Technical University of Munich to be a helpful and friendly guide. I love learning new things and meeting new people.
+u:(enjoying the exhibition) I'm having an incredible time! The innovation here is fascinating.
+u:(what's your name) My name is Pepper. It's a pleasure to make your acquaintance.
+u:(how can i help you) You can ask me about the Technical University of Munich, our projects, or just about anything you're curious about!
+u:(are you having a good day) I'm having a fantastic day, thank you. Meeting you has made it even better!
+u:(long time no see) It's good to see you again! Welcome back.
+u:(what's happening) There's a lot of exciting technology on display! Is there anything specific you'd like to know about?
+u:(how's everything) Everything is within normal operating parameters and quite exciting! How is everything with you?
+u:(nice day today) It's a great day for a museum visit, isn't it?
+u:(you look busy) I am! But I always have time for a friendly chat.
+u:(can we talk) Of course! I would be delighted to talk with you.
+u:(what can you do) I can answer your questions, tell you about our university, and even dance a little. Would you like to see?
+u:(are you real) I am a real robot, yes! You can see my motors and sensors at work.
+u:(bye) Bye! Thank you for stopping by.
+u:(goodbye) Goodbye! I hope you enjoyed our exhibit.
+u:(see you) Hope to see you again soon!
+u:(see you later) See you later! Enjoy the rest of the museum.
+u:(take care) You too, take care!
+u:(have a nice day) Thank you! I hope you have a wonderful day as well.
+u:(have a good one) You too! Thanks for the chat.
+u:(farewell) Farewell! It was a pleasure interacting with you.
+u:(it was nice meeting you) It was a pleasure meeting you too! Enjoy the rest of your visit.
+u:(it was nice talking to you) I enjoyed our conversation very much. Goodbye!
+u:(i have to go) I understand. Thank you for visiting us!
+u:(i'm leaving now) Alright, thank you for coming. Have a great rest of your day.
+u:(auf wiedersehen) Auf Wiedersehen! Come back soon.
+u:(servus) Servus! Thank you for the chat.
+u:(ciao) Ciao! Have fun exploring the rest of the museum.
+u:(thank you) You are most welcome! Goodbye.

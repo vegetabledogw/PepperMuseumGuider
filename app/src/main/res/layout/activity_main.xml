@@ -1,135 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_width="match_parent"
-
     android:layout_height="match_parent">
 
-
-    <!-- Image slideshow area - Full screen -->
-
     <ImageView
-
         android:id="@+id/imageView"
-
         android:layout_width="match_parent"
-
         android:layout_height="match_parent"
-
         android:scaleType="centerCrop"
-
         android:contentDescription="Slideshow Image"/>
 
-
-    <!-- Bottom left corner - Logo -->
-
     <ImageView
-
         android:id="@+id/logoView"
-
         android:layout_width="100dp"
-
         android:layout_height="100dp"
-
         android:layout_alignParentBottom="true"
-
         android:layout_alignParentStart="true"
-
         android:layout_margin="10dp"
-
         android:scaleType="fitCenter"
-
         android:contentDescription="Logo"
-
         android:src="@mipmap/ic_launcher"/>
 
-
-    <!-- Bottom right corner - Control panel -->
+    <ImageView
+        android:id="@+id/settingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_settings"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:contentDescription="Settings"/>
 
     <LinearLayout
-
+        android:id="@+id/settingsMenu"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
-
         android:layout_alignParentEnd="true"
-
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
-
         android:padding="10dp"
+        android:background="#CC000000"
+        android:visibility="gone">
 
-        android:background="#CC000000">
-
-
-        <!-- Status text -->
-
-        <TextView
-
-            android:id="@+id/statusText"
-
-            android:layout_width="wrap_content"
-
+        <LinearLayout
+            android:id="@+id/toggleAbilitiesLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+            <ImageView
+                android:id="@+id/abilitiesIndicator"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/indicator_red"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abilities"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
 
-            android:text="Status: Waiting..."
-
-            android:textSize="12sp"
-
-            android:textColor="#FFFFFF"
-
-            android:padding="5dp"
-
-            android:maxLines="3"
-
-            android:ellipsize="end"/>
-
-
-        <!-- Toggle Autonomous Abilities button -->
-
-        <Button
-
-            android:id="@+id/btnToggleAbilities"
-
-            android:layout_width="wrap_content"
-
+        <LinearLayout
+            android:id="@+id/toggleSpeechLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_margin="2dp"
-
-            android:minWidth="120dp"
-
-            android:minHeight="40dp"
-
-            android:text=" Abilities"
-
-            android:textSize="12sp" />
-
-
-        <!-- Toggle Auto Speech button -->
-
-        <Button
-
-            android:id="@+id/btnToggleSpeech"
-
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-
-            android:layout_margin="2dp"
-
-            android:minWidth="120dp"
-
-            android:minHeight="40dp"
-
-            android:text="Speech"
-
-            android:textSize="12sp" />
-
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+            <ImageView
+                android:id="@+id/speechIndicator"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/indicator_red"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Speech"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
 
     </LinearLayout>
-
 
 </RelativeLayout>

@@ -64,7 +64,7 @@ class MainActivity : RobotActivity(), RobotLifecycleCallbacks {
     @Volatile private var isAutoSpeechRunning = false
     private val speechHandler = Handler(Looper.getMainLooper())
     private var speechRunnable: Runnable? = null
-    private val SPEECH_INTERVAL = 10 * 60 * 1000L
+    private val SPEECH_INTERVAL = 60 * 60 * 1000L
     private val isSpeaking = AtomicBoolean(false)
 
     // Image slideshow variables

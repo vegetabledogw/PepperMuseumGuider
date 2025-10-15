@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -553,7 +554,8 @@ u:(thanks) no problem at all!"""
                 file.isFile && (file.extension.equals("jpg", true) ||
                         file.extension.equals("jpeg", true) ||
                         file.extension.equals("png", true))
-            }?.forEach { imageFiles.add(it) }
+            }?.sortedBy { it.name }?.forEach { imageFiles.add(it) }
+            currentImageIndex = 0
         } catch (e: Exception) { Log.e(TAG, "Error loading images", e) }
     }
 
@@ -578,9 +580,50 @@ u:(thanks) no problem at all!"""
         if (imageFiles.isEmpty()) return
         try {
             val imageFile = imageFiles[currentImageIndex]
-            BitmapFactory.decodeFile(imageFile.absolutePath)?.let { runOnUiThread { imageView.setImageBitmap(it) } }
+            decodeScaledBitmap(imageFile.absolutePath)?.let { bitmap ->
+                runOnUiThread { imageView.setImageBitmap(bitmap) }
+            } ?: run {
+                Log.w(TAG, "Failed to decode image: ${imageFile.absolutePath}")
+            }
             currentImageIndex = (currentImageIndex + 1) % imageFiles.size
         } catch (e: Exception) { Log.e(TAG, "Error displaying image", e) }
+    }
+
+    private fun decodeScaledBitmap(path: String, maxWidth: Int = 1280, maxHeight: Int = 720): Bitmap? {
+        return try {
+            val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            BitmapFactory.decodeFile(path, options)
+
+            if (options.outWidth <= 0 || options.outHeight <= 0) {
+                return null
+            }
+
+            options.inSampleSize = calculateInSampleSize(options, maxWidth, maxHeight)
+            options.inJustDecodeBounds = false
+            options.inPreferredConfig = Bitmap.Config.RGB_565
+
+            BitmapFactory.decodeFile(path, options)
+        } catch (e: Exception) {
+            Log.e(TAG, "decodeScaledBitmap failed for $path", e)
+            null
+        }
+    }
+
+    private fun calculateInSampleSize(options: BitmapFactory.Options, reqWidth: Int, reqHeight: Int): Int {
+        var inSampleSize = 1
+        val height = options.outHeight
+        val width = options.outWidth
+
+        if (height > reqHeight || width > reqWidth) {
+            var halfHeight = height / 2
+            var halfWidth = width / 2
+
+            while (halfHeight / inSampleSize >= reqHeight && halfWidth / inSampleSize >= reqWidth) {
+                inSampleSize *= 2
+            }
+        }
+
+        return if (inSampleSize <= 0) 1 else inSampleSize
     }
 
     private fun showToast(message: String) {
